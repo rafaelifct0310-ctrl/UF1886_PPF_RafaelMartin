@@ -53,5 +53,44 @@ Resultado resumido:
 Interpretación técnica:
 - El espacio en disco afecta al almacenamiento de datos, logs, imágenes Docker,
 volúmenes y ficheros temporales generados por PostgreSQL y Apache Hop.
-2.4 Procesos activos
 
+### 2.4 Procesos activos
+**Comandos utilizados:**
+```powershell
+Get-Process | Sort-Object CPU -Descending | Select-Object -First 10
+Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 10
+```
+Resultado resumido:
+- Procesos con mayor CPU:
+- Procesos con mayor uso de memoria:
+
+Interpretación técnica:
+- El análisis de procesos permite detectar si Docker Desktop, Java/Apache Hop u
+otros procesos del sistema están consumiendo demasiados recursos.
+
+## 3. Análisis de contenedores Docker
+### 3.1 Contenedores activos
+**Comando utilizado:**
+```powershell
+docker ps
+```
+Resultado resumido:
+- Contenedor Odoo:
+- Contenedor PostgreSQL:
+- Estado:
+
+### 3.2 Consumo de recursos de contenedores
+**Comando utilizado:**
+```powershell
+docker stats --no-stream
+```
+
+Resultado resumido:
+- CPU usada por Odoo:
+- RAM usada por Odoo:
+- CPU usada por PostgreSQL:
+- RAM usada por PostgreSQL:
+
+Interpretación técnica:
+- El consumo de recursos de los contenedores permite valorar si existe
+saturación en el ERP o en la base de datos.
