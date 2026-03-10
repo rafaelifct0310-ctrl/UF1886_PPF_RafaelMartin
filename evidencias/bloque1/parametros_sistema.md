@@ -36,7 +36,7 @@ Resultado resumido:
 - Memoria libre: 6350556
 
 Interpretación técnica:
-La memoria disponible condiciona el comportamiento de Docker Desktop, los
+- La memoria disponible condiciona el comportamiento de Docker Desktop, los
 contenedores y Apache Hop. Si la memoria libre es baja, puede producirse
 degradación del rendimiento general.
 
@@ -46,10 +46,12 @@ degradación del rendimiento general.
 Get-PSDrive -PSProvider FileSystem
 ```
 Resultado resumido:
-● Unidad principal:
-● Espacio usado:
-● Espacio libre:
+- Unidad principal: C:\  
+- Espacio usado:  191.05GB
+- Espacio libre:  46.78GB
+
 Interpretación técnica:
-El espacio en disco afecta al almacenamiento de datos, logs, imágenes Docker,
+- El espacio en disco afecta al almacenamiento de datos, logs, imágenes Docker,
 volúmenes y ficheros temporales generados por PostgreSQL y Apache Hop.
 2.4 Procesos activos
+
