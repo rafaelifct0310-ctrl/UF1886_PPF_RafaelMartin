@@ -75,9 +75,9 @@ otros procesos del sistema están consumiendo demasiados recursos.
 docker ps
 ```
 Resultado resumido:
-- Contenedor Odoo:
-- Contenedor PostgreSQL:
-- Estado:
+- Contenedor Odoo: odoo.18
+- Contenedor PostgreSQL: postgres.db
+- Estado: Up
 
 ### 3.2 Consumo de recursos de contenedores
 **Comando utilizado:**
@@ -86,8 +86,8 @@ docker stats --no-stream
 ```
 
 Resultado resumido:
-- CPU usada por Odoo:
-- RAM usada por Odoo:
+- CPU usada por Odoo: 398MiB
+- RAM usada por Odoo: 0.01%
 - CPU usada por PostgreSQL:
 - RAM usada por PostgreSQL:
 
