@@ -86,10 +86,10 @@ docker stats --no-stream
 ```
 
 Resultado resumido:
-- CPU usada por Odoo: 398MiB
-- RAM usada por Odoo: 0.01%
-- CPU usada por PostgreSQL:
-- RAM usada por PostgreSQL:
+- CPU usada por Odoo: 0.01%
+- RAM usada por Odoo: 398MiB
+- CPU usada por PostgreSQL: 0.00%
+- RAM usada por PostgreSQL: 159MiB
 
 Interpretación técnica:
 - El consumo de recursos de los contenedores permite valorar si existe
