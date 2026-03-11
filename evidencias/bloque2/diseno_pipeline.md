@@ -26,4 +26,9 @@ ADD COLUMN customer_rank INTEGER;
 
 ALTER TABLE staging.stg_res_partner 
 ADD COLUMN supplier_rank INTEGER;
+
+ALTER TABLE staging.stg_res_partner 
+ADD COLUMN name_clean TEXT,
+ADD COLUMN email_clean TEXT,
+ADD COLUMN phone_clean TEXT;
 ```
