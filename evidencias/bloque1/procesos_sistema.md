@@ -74,3 +74,81 @@ Estas transformaciones permiten preparar los datos para su análisis posterior.
 ---
 # 5. Almacén de datos
 ## 5.1 Base de datos del almacén
+Sistema gestor: PostgreSQL
+El almacén de datos utiliza un esquema denominado:
+staging
+Este esquema almacena los datos procedentes del ERP después de pasar por el
+proceso ETL.
+---
+## 5.2 Función del esquema staging
+El esquema staging sirve como:
+- zona temporal de almacenamiento
+- área de preparación de datos
+- separación entre sistema transaccional y sistema analítico
+Esto evita que los procesos analíticos afecten al rendimiento del ERP.
+---
+# 6. Herramientas de monitorización del sistema
+## 6.1 Monitorización del sistema Windows
+Herramientas utilizadas:
+- Administrador de tareas
+- Monitor de recursos
+- PowerShell
+Parámetros observados:
+- uso de CPU
+- memoria disponible
+- procesos activos
+- uso de disco
+Estas herramientas permiten detectar saturación del sistema o procesos que
+consumen demasiados recursos.
+---
+## 6.2 Monitorización de contenedores Docker
+Herramientas utilizadas:
+docker ps
+docker stats
+docker logs
+Información obtenida:
+- estado de los contenedores
+- consumo de CPU
+- consumo de memoria
+- mensajes de error en los logs
+Permite verificar el funcionamiento de:
+- Odoo
+- PostgreSQL
+---
+## 6.3 Monitorización de PostgreSQL
+PostgreSQL permite analizar la actividad de la base de datos mediante
+consultas internas.
+Se pueden revisar aspectos como:
+- conexiones activas
+- consultas en ejecución
+- estado de las sesiones
+Esto permite detectar problemas como:
+- exceso de conexiones
+- consultas lentas
+- bloqueos en la base de datos
+- ---
+## 6.4 Monitorización del proceso ETL
+Apache Hop permite analizar la ejecución de los pipelines ETL mediante:
+- logs de ejecución
+- estado de los pasos del pipeline
+- mensajes de error
+Esto permite identificar incidencias durante la extracción, transformación o
+carga de datos.
+---
+# 7. Resumen de procesos del sistema
+| Componente | Función | Tecnología |
+|-------------|---------|-----------|
+| ERP | Gestión de operaciones del negocio | Odoo 18 |
+| Base de datos transaccional | Almacenamiento de datos operativos |
+PostgreSQL |
+| Proceso ETL | Extracción, transformación y carga de datos | Apache Hop |
+| Almacén de datos | Almacenamiento para análisis | PostgreSQL (staging) |
+---
+# 8. Conclusión
+El sistema está compuesto por un ERP Odoo que almacena los datos en
+PostgreSQL, un proceso ETL ejecutado mediante Apache Hop que extrae y
+transforma dichos datos, y un almacén de datos basado en PostgreSQL donde se
+almacenan los datos preparados para su análisis.
+La monitorización del sistema se realiza mediante herramientas del sistema
+operativo, Docker, PostgreSQL y los logs del proceso ETL, lo que permite
+detectar incidencias y problemas de rendimiento.
