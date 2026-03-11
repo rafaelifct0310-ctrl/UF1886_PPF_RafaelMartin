@@ -40,13 +40,13 @@ En el panel de ejecución se muestran los registros procesados por cada paso.
 Ejemplo de resultado observado:
 | Paso | Registros procesados |
 |-----|-----|
-| Table Input | 85 |
-| String Operations | 85 |
-| If Null | 85 |
-| Select Values | 85 |
-| Table Output | 85 |
+| Table Input | 49 |
+| String Operations | 49 |
+| If Null | 49 |
+| Select Values | 49 |
+| Table Output | 49 |
 Esto indica que:
-- se extrajeron **85 registros** desde la tabla `res_partner`
+- se extrajeron **49 registros** desde la tabla `res_partner`
 - todos los registros pasaron correctamente por las transformaciones
 - los registros fueron insertados en la tabla del esquema `staging`
 ---
@@ -57,6 +57,5 @@ siguiente consulta SQL en PostgreSQL:
 SELECT COUNT(*)
 FROM staging.stg_res_partner;
 Resultado obtenido:
-85
-Esto confirma que los registros fueron cargados correctamente en la tabla de
-destino.
+49
+Esto confirma que los registros fueron cargados correctamente en la tabla de destino.
